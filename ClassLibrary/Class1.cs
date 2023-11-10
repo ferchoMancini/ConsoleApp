@@ -2,6 +2,6 @@
 {
 	public class Class1
 	{
-		//Test
-	}
+        public int Age { get; set; }
+    }
 }
