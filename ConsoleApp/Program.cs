@@ -8,6 +8,6 @@ Person person = new Person();
 person.Name = "Pepe";
 person.Age = 45;
 person.Address = "df";
-
+person.City = "mar del plata";
 
 Console.WriteLine("Test");
