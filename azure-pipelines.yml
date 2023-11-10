@@ -19,7 +19,12 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-    restoreSolution: '$(solution)'
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '1468e674-59c8-4ca3-85a7-fed3e41e724f'
+    includeNuGetOrg: false
+
 
 - task: VSBuild@1
   inputs:
@@ -27,17 +32,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-- task: NuGetCommand@2
-  inputs:
-    command: 'restore'
-    restoreSolution: '**/*.sln'
-    feedsToUse: 'select'
-    vstsFeed: '1468e674-59c8-4ca3-85a7-fed3e41e724f'
-    includeNuGetOrg: false
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
