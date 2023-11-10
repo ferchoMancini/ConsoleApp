@@ -31,17 +31,14 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/ClassLibrary.csproj'
     versioningScheme: 'off'
-
 - task: NuGetCommand@2
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: '5731ebc8-9b3c-4355-96e6-f1fef3540d51'
-    allowPackageConflicts: true
+    publishVstsFeed: '1468e674-59c8-4ca3-85a7-fed3e41e724f'
