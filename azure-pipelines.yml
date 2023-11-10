@@ -37,6 +37,7 @@ steps:
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
     vstsFeed: '1468e674-59c8-4ca3-85a7-fed3e41e724f'
+    includeNuGetOrg: false
 - task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
