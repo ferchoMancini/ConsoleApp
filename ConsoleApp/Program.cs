@@ -8,3 +8,6 @@ Person person = new Person();
 person.Name = "Pepe";
 person.Age = 45;
 person.Address = "df";
+
+
+Console.WriteLine("Test");
